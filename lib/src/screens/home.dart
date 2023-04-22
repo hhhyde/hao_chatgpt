@@ -1,14 +1,10 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hao_chatgpt/src/app_router.dart';
 import 'package:hao_chatgpt/src/extensions.dart';
 
 import '../../l10n/generated/l10n.dart';
-import '../app_shortcuts.dart';
 import '../constants.dart';
-import '../app_config.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -113,22 +109,6 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               Expanded(flex: 3, child: Container()),
-              TextButton(
-                onPressed: () async {
-                  openWebView(
-                      context: context,
-                      url: Constants.haoChatGitHubUrl,
-                      title: 'hao_chatgpt');
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: Text(
-                    '${S.of(context).appDescription}\nPowered by Conghaonet',
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 10, color: Colors.blue),
-                  ),
-                ),
-              ),
             ],
           ),
         ),
